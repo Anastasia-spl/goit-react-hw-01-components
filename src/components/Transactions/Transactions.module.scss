@@ -1,0 +1,31 @@
+.table {
+  margin: 0 auto;
+  border: 1px solid rgb(120, 124, 155);
+  border-radius: 5px;
+}
+.thead {
+  background-color: rgb(120, 124, 155);
+  color: azure;
+}
+
+.type {
+  width: 150px;
+  text-transform: capitalize;
+  padding: 5px 8px;
+}
+
+.amount {
+  width: 150px;
+  text-align: center;
+}
+
+.currency {
+  width: 150px;
+  text-align: center;
+}
+
+.raw {
+  &:nth-child(2n) {
+    background-color: khaki;
+  }
+}
