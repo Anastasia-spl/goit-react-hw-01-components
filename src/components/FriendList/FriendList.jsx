@@ -9,19 +9,16 @@ const styles = createUseStyles({
     margin: '-10px',
     marginBottom: '40px',
   },
-  item: {
-    margin: '10px',
-  },
 });
 
 const FriendList = ({ friends }) => {
   const classes = styles();
-  const { friendList, item } = classes;
+  const { friendList } = classes;
   return (
     <ul className={friendList}>
-      {friends.map(({ id, avatar, name, isOnline }) => (
-        <li className={item} key={id}>
-          <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
+      {friends.map(friend => (
+        <li>
+          <FriendListItem key={friend.id} friend={friend} />
         </li>
       ))}
     </ul>

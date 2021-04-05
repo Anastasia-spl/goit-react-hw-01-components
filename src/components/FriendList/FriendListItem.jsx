@@ -11,21 +11,24 @@ const styles = createUseStyles({
     borderRadius: '50%',
     backgroundColor: isOnline => (isOnline ? 'green' : 'red'),
   },
+  item: {
+    margin: '10px',
+  },
   img: {
     width: 100,
     height: 100,
   },
 });
 
-const FriendListItem = ({ avatar, name, isOnline }) => {
+const FriendListItem = ({ friend: { avatar, name, isOnline } }) => {
   const classes = styles(isOnline);
-  const { status, img } = classes;
+  const { status, img, item } = classes;
   return (
-    <Fragment>
+    <li className={item}>
       <span className={status}></span>
       <img className={img} src={avatar} alt="Avatar" width="48" />
       <p className={name}>{name}</p>
-    </Fragment>
+    </li>
   );
 };
 
