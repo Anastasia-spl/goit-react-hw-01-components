@@ -66,15 +66,9 @@ const styles = createUseStyles({
   },
 });
 
-const Profile = ({ user }) => {
+const Profile = ({ name, tag, location, avatar, stats }) => {
   const classes = styles();
-  const {
-    name,
-    tag,
-    location,
-    avatar,
-    stats: { followers, views, likes },
-  } = user;
+  const { followers, views, likes } = stats;
   return (
     <div className={classes.profile}>
       <div className={classes.description}>
@@ -107,15 +101,15 @@ Profile.defaultProps = {
 };
 
 Profile.propTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    tag: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    avatar: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string,
+  stats: PropTypes.shape({
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
     likes: PropTypes.number.isRequired,
-  }),
+  }).isRequired,
 };
 
 export default Profile;

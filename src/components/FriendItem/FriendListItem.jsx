@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import defaultAvatar from '../../images/defaultAvatar.jpeg';
 import { createUseStyles } from 'react-jss';
@@ -37,9 +36,11 @@ FriendListItem.defaultProps = {
 };
 
 FriendListItem.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
+  friend: PropTypes.shape({
+    avatar: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default FriendListItem;

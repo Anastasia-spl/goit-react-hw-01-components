@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import FriendListItem from './FriendListItem';
+import FriendListItem from '../FriendItem/FriendListItem';
 import { createUseStyles } from 'react-jss';
 
 const styles = createUseStyles({
@@ -17,9 +17,7 @@ const FriendList = ({ friends }) => {
   return (
     <ul className={friendList}>
       {friends.map(friend => (
-        <li>
-          <FriendListItem key={friend.id} friend={friend} />
-        </li>
+        <FriendListItem key={friend.id} friend={friend} />
       ))}
     </ul>
   );
